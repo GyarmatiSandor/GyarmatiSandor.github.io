@@ -39,11 +39,30 @@ header {
 }
 
 /* Award Tooltip Styles */
+
 .award-tooltip {
     position: relative;
     cursor: pointer;
     color: var(--accent-color);
     font-weight: bold;
+    outline: none;
+}
+
+.award-tooltip:focus .award-image,
+.award-tooltip:active .award-image {
+    display: block;
+}
+
+.award-tooltip:focus {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.award-tooltip[tabindex="0"] {
+    outline: none;
+}
+
+.award-tooltip[aria-describedby] {
+    cursor: pointer;
 }
 
 .award-image {
@@ -64,10 +83,12 @@ header {
     display: block;
 }
 
-.award-image img {
+.award-image img,
+.award-zoom-image {
     max-width: 200px;
     height: auto;
     display: block;
+    cursor: zoom-in;
 }
 
 nav .container {
