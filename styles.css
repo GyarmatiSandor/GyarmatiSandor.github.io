@@ -38,6 +38,59 @@ header {
     box-shadow: var(--shadow);
 }
 
+/* Award Tooltip Styles */
+
+.award-tooltip {
+    position: relative;
+    cursor: pointer;
+    color: var(--accent-color);
+    font-weight: bold;
+    outline: none;
+}
+
+.award-tooltip:focus .award-image,
+.award-tooltip:active .award-image {
+    display: block;
+}
+
+.award-tooltip:focus {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.award-tooltip[tabindex="0"] {
+    outline: none;
+}
+
+.award-tooltip[aria-describedby] {
+    cursor: pointer;
+}
+
+.award-image {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--shadow);
+    padding: 8px;
+    z-index: 10;
+    min-width: 220px;
+}
+
+.award-tooltip:hover .award-image {
+    display: block;
+}
+
+.award-image img,
+.award-zoom-image {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    cursor: zoom-in;
+}
+
 nav .container {
     display: flex;
     justify-content: space-between;
